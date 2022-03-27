@@ -4,15 +4,7 @@ import React from 'react';
 class Card extends React.Component{
     constructor(props){
         super(props);
-        this.state = {
-            author: "Czech based",
-            title: "UI/UX Designer",
-            contents: [
-                "Andrey is driven by turning ideas into scalable and empowering experiences that solve real life problems.",
-                "He is currently the founder of Dvorak media. Previously, Andrey Was a product designer at Dropbox.",
-                "Over the years, Michael has been priviledged to have worked with Adobe, Evernote, Square and more."
-            ],
-        }
+        this.state = {};
     }
 
     getFormPage(){
@@ -34,15 +26,18 @@ class Card extends React.Component{
     }
 
     getFrontPage(){
-        const author = this.state.author;
-        const title = this.state.title;
-        const contents = this.state.contents.map((content)=>{
-            return (<p className='content'>{content}</p>);
+        const author = this.props.cardInfo.author;
+        const title = this.props.cardInfo.title;
+        const imgURL ='./images/' + this.props.cardInfo.imageInfo[0];
+        const contents = this.props.cardInfo.contents.map((content)=>{
+            return (<p key={content[0]} className='content'>{content[1]}</p>);
         });
 
         return (
             <div className="card card-front">
-                <div className='photo clearfix'></div>
+                <div className='photo clearfix'>
+                    <img src={imgURL} alt={this.props.cardInfo.imageInfo[1]}></img>
+                </div>
                 <div className='description'>
                     {author}
                     {title}
@@ -53,8 +48,10 @@ class Card extends React.Component{
     }
 
     render(){
+        const className = 'card-container card-style-' + this.props.value;
+
         return(
-            <div className='card-container'>
+            <div className={className}>
                 {this.getFrontPage()}
                 {this.getFormPage()}
             </div>
