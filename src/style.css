@@ -45,6 +45,10 @@ body {
     padding: 10px;
 }
 
+.card-controller p {
+    text-align: center;
+}
+
 .card-controller button {
     width: 50%;
     margin-top: 30px;

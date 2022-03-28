@@ -44,10 +44,7 @@ class CardApp extends React.Component {
     render(){
         return (
             <div className='cardApp'>
-                <CardController />
-                <Card value={0} cardInfo={this.state.cardInfo[0]}/>
-                <Card value={1} cardInfo={this.state.cardInfo[1]}/>
-                <Card value={2} cardInfo={this.state.cardInfo[2]}/>
+                <CardController cardInfo={this.state.cardInfo}/>
             </div>
         );
     }
