@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@500&display=swap');
+
+
+* {
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+
+    font-family: 'Noto Sans KR', sans-serif;
+
+    --duration: .7s;
+    --display-width : 375px;
+    --display-height : 667px;
+    --display-radius : 15px;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all --duration;
+}
+
+.menu {
+    --button-icon-size : 3.7em; 
+
+    width: var(--display-width);
+    padding: 0.5em;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    background-color: #1d1d27;
+    border-top-left-radius: var(--display-radius);
+    border-top-right-radius: var(--display-radius);
+
+    transition: all var(--duration) linear;
+    
+    .btn {
+        padding: 0.3em;
+        cursor: pointer;
+        border-radius: 50%;
+        border: none;
+        background-color: #fff;
+        border: 3px solid #fff;
+        .material-icons {
+            font-size: var(--button-icon-size);
+            color: white;
+            
+        }
+    }
+    
+}
+
+.mobile-app {
+    width: var(--display-width);
+    height: var(--display-height);
+    border-radius: var(--display-radius);
+    box-shadow: 0 10px 20px 10px #ddd;
+    position: relative;
+
+    .interface-container {
+        width: var(--display-width);
+        height: var(--display-width);
+        padding: 0.3em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .timer-interface {
+            width: 90%; height: 90%;
+            border-radius: 50%;
+            position: relative;
+            transition: all var(--duration);
+            box-shadow: 0 10px 15px 10px #ccc;
+            color: #fff;
+
+            .time {
+                text-align: center;
+                font-size: 4em;
+                position: absolute;
+                top: 50%; left: 50%;
+                transform: translate(-50%, -50%);
+
+                .currentSetTime{
+                    text-decoration: underline;
+                }
+            }
+
+            .reset { 
+                position: absolute;
+                bottom: 0; right: 0;
+                padding: 15px 10px;
+                transform: translate(-50%, -50%);
+                border-radius: 50%;
+                cursor: pointer;
+            }
+
+            .mode-title {
+                position: absolute;
+                bottom: 0; left:50%;
+                transform: translate(-50%, -50%);
+            }
+        }
+    }
+
+    .controller {
+        position: relative;
+        .button-container{
+            width: 200px;
+            position: absolute;
+            top:50%; left:50%;
+            transform: translate(-50%, 50%);
+
+            button {
+                cursor: pointer;
+                width: 100px;
+                background: none;
+                border: none;
+                font-weight: bold;
+                font-size: 1.2em;
+            }
+            button.set {
+                position: absolute;
+                top: 50%; left:50%;
+                transform: translate(-50%, 280%);
+                font-size: 15px;
+                padding: 10px;
+                
+            }
+            button.start {
+                position: absolute;
+                top: 50%; left:50%;
+                transform: translate(-50%, 130%);
+                font-size: 15px;
+                padding: 8px;
+                border: 1px solid black;
+                border-radius: 25px;
+            }
+            button:hover {
+                color: green;
+            }
+        }
+
+        
+    }
+}
+
