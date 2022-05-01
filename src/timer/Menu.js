@@ -2,17 +2,25 @@ import React from 'react';
 
 function Menu(props){
 
-    const renderButton = props.btnList.map((btn)=>{
-        return(
-            <button key={btn.number} className="btn" style={props.style} onClick={props.clickEvent}>
-                <span className="material-icons" data-id={btn.number}>{btn.content}</span>
-            </button>
-        );
-    });
+    const btnList = props.btnList;
 
     return(
         <div className="menu">
-            {renderButton}
+            <button className="btn" style={props.style} onClick={props.clickEvent}>
+                <span className="material-icons" data-id="0">{btnList[0].content}</span>
+            </button>
+            <button className="btn" style={props.style} onClick={props.clickEvent}>
+                <span className="material-icons" data-id="1">{btnList[1].content}</span>
+            </button>
+            <button className="btn" style={props.style} onClick={props.clickEvent}>
+                <span className="material-icons" data-id="2">{btnList[2].content}</span>
+            </button>
+            <button className="btn" style={props.style} onClick={props.clickEvent}>
+                <span className="material-icons" data-id="3">{btnList[3].content}</span>
+            </button>
+            <button className="btn" style={props.style} onClick={props.clickEvent}>
+                <span className="material-icons" data-id="4">{btnList[4].content}</span>
+            </button>
         </div>
     );
 }
