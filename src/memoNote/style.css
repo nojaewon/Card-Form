@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Koulen&display=swap');
+
+* {
+    margin: 0; padding: 0;
+    box-sizing: border-box;
+
+    --display-width: 375px;
+    --display-height: 667px;
+
+    color: #555 ;
+}
+
+/* 전체적인 메모장 디자인 */
+.memo-container {
+    width: var(--display-width);
+    height: var(--display-height);  
+    margin: 25px auto;
+    box-shadow: 1px 5px 10px 1px #555;
+    border-radius: 10px;
+    background-image: url(./pattern.jpg);
+    background-repeat: repeat;
+
+    position: relative;
+}
+
+.memo-container .header {
+    width: var(--display-width);
+    height: 50px;
+}
+
+.memo-container .header .title {
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    font-size: 2em;
+    font-family: 'Koulen', cursive;   
+}
+
+.memo-container .memo-list {
+    width: var(--display-width);
+    height: 550px;
+    margin-top: 10px;
+    padding: 12px;
+    overflow: scroll;
+}
+
+.memo-container .memo-list::-webkit-scrollbar{
+    display: none;
+}
+
+.memo-container .adder {
+    width: 32px; height: 32px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    bottom: 10px; right: 24px;
+    box-shadow: 1px 1px 3px 1px #555;
+    border-radius: 50%;
+}
+
+.memo-container .adder .icon {
+    font-size: 32px;    
+}
+
+
+/* 노트 기능 구현 디자인 */
+.note-container {
+    float: left;
+    position: relative;
+    
+    box-shadow: inset 1px 1px 5px 1px #666;
+    width: 150px; height: 150px;
+    margin: 12px;
+
+    background-color: #fff;
+    
+}
+
+.note-container .layer {
+    position: absolute;
+    top: 0; left: 0;
+
+    width: 150px; height: 150px;
+}
+
+.note-container .layer:hover {
+    background-color: rgba(0,0,0,0.1);
+}

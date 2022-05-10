@@ -63,6 +63,23 @@ const alarmList = [
 
 
 function Timer(){
+    window.onload = ()=>{
+        const description = `Welcome to Timer Application
+            - Clock: No function, just Clock.
+            - Timer:
+                <, > : move current timeSet
+                timeSet : set up the time of current timeSet
+                start : start the timer
+                reset : reset the timer
+            - Alarm : the same use as timer
+            - Stop Watch : click to start the App
+            - Back Log : manage the Alarm lists
+            `
+    
+    
+        alert(description);
+    }
+
     const [timeSelector, setTimeSelector] = useState(0);
     const [id, setId] = useState(0);
     const [mode, setMode] = useState(btnList[0].mode);
@@ -94,8 +111,10 @@ function Timer(){
             && alarm.timeSet.hour === date.getHours() && alarm.timeSet.min === date.getMinutes()){
                 if(date.getSeconds()<10){
                     alert('timeout!');
-                }   
-            } 
+                }
+            } else {
+                console.log(alarmRefList[alarm.id]);
+            }
         });
     }
 
@@ -281,23 +300,6 @@ function Timer(){
             <Controller clickEvent={clickHandler}/>
         </div>
     );
-}
-
-window.onload = ()=>{
-    const description = `Welcome to Timer Application
-        - Clock: No function, just Clock.
-        - Timer:
-            <, > : move current timeSet
-            timeSet : set up the time of current timeSet
-            start : start the timer
-            reset : reset the timer
-        - Alarm : the same use as timer
-        - Stop Watch : click to start the App
-        - Back Log : manage the Alarm lists
-        `
-
-
-    alert(description);
 }
 
 
